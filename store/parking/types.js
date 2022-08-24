@@ -1,2 +1,3 @@
-export const INCREMENT = "INCREMENT";
-export const DECREMENT = "DECREMENT";
+export const UPDATE_MAP = "UPDATE_MAP";
+export const UPDATE_RESERVED_VEHICLE = "UPDATE_RESERVED_VEHICLE";
+
