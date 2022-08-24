@@ -1,0 +1,18 @@
+{
+    "prettier.endOfLine": "crlf",
+    "prettier.semi": true,
+    "prettier.singleQuote": false,
+    "prettier.printWidth": 100,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2,
+    "editor.wordWrap": "on",
+    "editor.formatOnSave": true,
+    "editor.insertSpaces": true,
+    "vetur.validation.script": false,
+    "search.exclude": {
+      "**/node_modules": true,
+      "**/.next": true,
+      "**/.output": true
+    }
+  }
+  
