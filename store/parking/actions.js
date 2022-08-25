@@ -97,7 +97,7 @@ export const unPark = (params) => (dispatch, getState) =>
 
     //find parking spot
     let vacantSlots = selectedEntryPoint.parkingSpots.find((data) => {
-      return data.vehicle.toLowerCase() === plateNumber.toLowerCase();
+      return data.vehicle != null && data.vehicle.toLowerCase() === plateNumber.toLowerCase();
     });
 
     vacantSlots.vehicle = null;

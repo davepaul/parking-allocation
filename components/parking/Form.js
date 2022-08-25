@@ -27,14 +27,16 @@ const Form = () => {
   });
 
   const handleParking = async (data) => {
-    try {
-      await dispatch(park(data));
-      reset();
-    } catch (error) {
-      reset();
-      toast.warn(error, {
-        position: toast.POSITION.TOP_CENTER,
-      });
+    if (isValid) {
+      try {
+        await dispatch(park(data));
+        reset();
+      } catch (error) {
+        reset();
+        toast.warn(error, {
+          position: toast.POSITION.TOP_CENTER,
+        });
+      }
     }
   };
 
@@ -52,7 +54,7 @@ const Form = () => {
                 id="vehicle-size"
                 className="bg-gray-700 w-full block focus:outline-none"
               >
-                <option>Vehicle size</option>
+                <option value={""}>Vehicle size</option>
                 <option value="S">Small</option>
                 <option value="M">Medium</option>
                 <option value="L">Large</option>
@@ -71,7 +73,7 @@ const Form = () => {
                 id="entry-point"
                 className="bg-gray-700 w-full block focus:outline-none"
               >
-                <option>Entry point</option>
+                <option value={""}>Entry point</option>
                 <option value="A">A</option>
                 <option value="B">B</option>
                 <option value="C">C</option>
@@ -91,9 +93,7 @@ const Form = () => {
                   placeholder="Ex: 382MSD"
                   className="bg-gray-700 px-1 py-2.5 focus:outline-none col-span-2"
                 />
-                <button className="cursor-pointer text-md" disabled={!isValid}>
-                  Submit
-                </button>
+                <button className="cursor-pointer text-md">Submit</button>
               </div>
             </div>
             <span className="text-xs text-red-600">{errors.plateNumber?.message}</span>
